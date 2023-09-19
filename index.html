@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<input type="text" onchange="setfight1(this.value)"/>
+<input type="text" onchange="setfight2(this.value)"/>
+<button onclick="setfight()">sett fight</button>
+<div id="app"></div>
+
+<script>
+    let fighters = []
+    let navn = []
+    const app = document.getElementById('app');
+    function setfight1(input){
+        fighters.push(input)
+    }
+
+    function setfight2(input){
+        navn.push(input)
+    }
+
+    function setfight(){
+       let figther = Math.floor(Math.random()* fighters.length);
+       let navnfigther = Math.floor(Math.random()* navn.length);
+       app.innerHTML = /*HTML*/ `
+        ${fighters[figther]};
+        ${navn[navnfigther]};
+       `;
+    }
+
+
+</script>
+
+</body>
+</html>
+
+
+
